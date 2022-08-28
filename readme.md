@@ -1,6 +1,10 @@
 # 자가진단 자동화
 셀레니움 사용
 
+## 사용법
+1. https://chromedriver.chromium.org/downloads 에서 자신의 크롬 버젼에 맞는 크롬 드라이버를 다운로드 후 같은 폴더 경로에 넣는다.
+2. main.py를 실행한다.
+
 ## config.json 작성법.
 
 School: 학교 풀네임 (ex. 영광고등학교)  

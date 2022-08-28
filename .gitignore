@@ -1,3 +1,9 @@
 config.json
 
 chromedriver.exe
+
+main.spec
+
+build/
+
+dist/
