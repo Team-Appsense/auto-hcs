@@ -1,0 +1,22 @@
+{
+    "School" : "학교명",
+    "City" : "시/도 코드",
+    "Level" : "학교급 코드",
+    "User" : [
+        {
+            "name": "이름1",
+            "birthday": "생년월일1(YYMMDD)",
+            "password": "자가진단 비밀번호1"
+        },
+        {
+            "name": "이름2",
+            "birthday": "생년월일2(YYMMDD)",
+            "password": "자가진단 비밀번호2"
+        },
+        {
+            "name": "이름3",
+            "birthday": "생년월일3(YYMMDD)",
+            "password": "자가진단 비밀번호3"
+        }
+    ]
+}
