@@ -44,8 +44,7 @@ User:
 
 ## To-do
 
-#### 1.등록된 모든 사람 자가진단.
-#### 2.잘못된 학교 이름 등 예외처리.
+#### 
 -----
 #### Developed by. Lee hyowon (https://github.com/leehyowon14)
 ##### Email. dev.leehyowon14@gmail.com
