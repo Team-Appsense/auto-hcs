@@ -1,3 +1,5 @@
+from ensurepip import version
+from os import system
 def printLogo():
     system('cls')
     print('''
@@ -7,17 +9,18 @@ def printLogo():
   /  /_\  \  |  |  |  |     |  |     |  |  |  | |______|   __   | |  |        \   \    
  /  _____  \ |  `--'  |     |  |     |  `--'  |        |  |  |  | |  `----.----)   |   
 /__/     \__\ \______/      |__|      \______/         |__|  |__|  \______|_______/    
+                                                                by. leehyowon14 (Team.Appsense)
     ''')
 
 printLogo()
-print("Auto-HCS V2.0 is now loding...")
+version = "V3.0"
+print("Auto-HCS " + version + " is now loding...")
 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from os import system
 import sys
 import json
 with open("./config.json", "r", encoding="utf-8") as r:
@@ -90,7 +93,7 @@ def hcs(user):
     #start
     try:
         WebDriverWait(driver, 30).until(
-            expected_conditions.element_to_be_clickable(("css selector", "#container > div > section.memberWrap > div:nth-child(2) > ul > li > a.survey-button"))
+            expected_conditions.visibility_of_element_located(("css selector", "#container > div > section.memberWrap > div:nth-child(2) > ul > li > a.survey-button"))
         )
         driver.find_element("css selector", "#container > div > section.memberWrap > div:nth-child(2) > ul > li > a.survey-button").click()
     except:
@@ -113,7 +116,7 @@ def hcs(user):
     return True
 
 printLogo()
-print("Auto-HCS V2.0 is loded!!\n")
+print("Auto-HCS " + version + " is loded!!\n")
 
 try:
     for i in range(len(config['User'])):
@@ -129,7 +132,16 @@ try:
         for i in config['User']:
             printLogo()
             print("[Auto-HCS info] 선택된 유저 : "+i["name"])
-            hcs(i)
+            for x in range(5):
+                if hcs(i) == False:
+                    print("[Auto-HCS info] 자가진단을 다시 시도합니다. "+str(x+1)+"/5")
+                else:
+                    break
+                if x == 4:
+                    print("[Auto-HCS info] 자가진단 참여에 실패하였습니다.")
+        printLogo()    
+        print("[Auto-HCS info] 모든 자가진단을 완료하였습니다.")
+
         system('pause')
 except:
     print("올바른 번호를 입력하여 주세요")
